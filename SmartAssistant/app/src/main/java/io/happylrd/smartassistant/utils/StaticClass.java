@@ -7,4 +7,7 @@ public class StaticClass {
 
     // need to be replaced with your Bugly App ID
     public static final String BUGLY_APP_ID = "REPLACE_ME_WITH_A_REAL_ID";
+
+    // need to be replaced with your Bmob App ID
+    public static final String BMOB_APP_ID = "REPLACE_ME_WITH_A_REAL_ID";
 }

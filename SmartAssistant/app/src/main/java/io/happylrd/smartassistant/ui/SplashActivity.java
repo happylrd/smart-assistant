@@ -7,7 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
-import io.happylrd.smartassistant.MainActivity;
 import io.happylrd.smartassistant.R;
 import io.happylrd.smartassistant.utils.ShareUtils;
 import io.happylrd.smartassistant.utils.StaticClass;
@@ -31,7 +30,7 @@ public class SplashActivity extends AppCompatActivity {
                         );
                     } else {
                         startActivity(new Intent(
-                                SplashActivity.this, MainActivity.class)
+                                SplashActivity.this, LoginActivity.class)
                         );
                     }
                     finish();
