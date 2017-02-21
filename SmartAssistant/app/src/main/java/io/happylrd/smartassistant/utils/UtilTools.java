@@ -30,12 +30,11 @@ public class UtilTools {
         byte[] bytes = byteStream.toByteArray();
         String imgStr = new String(Base64.encodeToString(bytes, Base64.DEFAULT));
 
-        //TODO:constant will be extracted later
-        ShareUtils.putString(context, "image_title", imgStr);
+        ShareUtils.putString(context, StaticClass.SHARE_HEAD_PORTRAIT, imgStr);
     }
 
     public static void getImageFromShare(Context context, ImageView imageView) {
-        String imgStr = ShareUtils.getString(context, "image_title", "");
+        String imgStr = ShareUtils.getString(context, StaticClass.SHARE_HEAD_PORTRAIT, "");
         if (!imgStr.equals("")) {
             byte[] bytes = Base64.decode(imgStr, Base64.DEFAULT);
             ByteArrayInputStream byteStream = new ByteArrayInputStream(bytes);

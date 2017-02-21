@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.File;
@@ -25,7 +26,9 @@ import cn.bmob.v3.listener.UpdateListener;
 import de.hdodenhof.circleimageview.CircleImageView;
 import io.happylrd.smartassistant.R;
 import io.happylrd.smartassistant.entity.MyUser;
+import io.happylrd.smartassistant.ui.ExpressActivity;
 import io.happylrd.smartassistant.ui.LoginActivity;
+import io.happylrd.smartassistant.ui.PhoneAttributionActivity;
 import io.happylrd.smartassistant.utils.UtilTools;
 import io.happylrd.smartassistant.view.CustomDialog;
 
@@ -52,6 +55,9 @@ public class UserFragment extends Fragment implements View.OnClickListener {
     private Button mGalleryBtn;
     private Button mCancelBtn;
 
+    private TextView mExpressText;
+    private TextView mPhoneAttributionText;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
@@ -72,11 +78,15 @@ public class UserFragment extends Fragment implements View.OnClickListener {
         mExitUserBtn = (Button) view.findViewById(R.id.btn_exit_user);
         mChangeUserInfoBtn = (Button) view.findViewById(R.id.btn_change_user_info);
         civ_profile = (CircleImageView) view.findViewById(R.id.civ_profile);
+        mExpressText = (TextView) view.findViewById(R.id.tv_express);
+        mPhoneAttributionText = (TextView) view.findViewById(R.id.tv_phone_attribution);
 
         mEditUserBtn.setOnClickListener(this);
         mChangeUserInfoBtn.setOnClickListener(this);
         mExitUserBtn.setOnClickListener(this);
         civ_profile.setOnClickListener(this);
+        mExpressText.setOnClickListener(this);
+        mPhoneAttributionText.setOnClickListener(this);
 
         UtilTools.getImageFromShare(getActivity(), civ_profile);
 
@@ -173,6 +183,12 @@ public class UserFragment extends Fragment implements View.OnClickListener {
                 break;
             case R.id.btn_cancel:
                 mPhotoDialog.dismiss();
+                break;
+            case R.id.tv_express:
+                startActivity(new Intent(getActivity(), ExpressActivity.class));
+                break;
+            case R.id.tv_phone_attribution:
+                startActivity(new Intent(getActivity(), PhoneAttributionActivity.class));
                 break;
         }
     }

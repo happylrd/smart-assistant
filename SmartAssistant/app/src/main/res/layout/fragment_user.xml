@@ -123,6 +123,7 @@
             android:visibility="gone" />
 
         <TextView
+            android:id="@+id/tv_express"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
@@ -138,6 +139,7 @@
             android:background="@color/colorPrimary" />
 
         <TextView
+            android:id="@+id/tv_phone_attribution"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
