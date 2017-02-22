@@ -16,4 +16,5 @@ public class StaticClass {
     public static final String JUHE_EXPRESS_APP_KEY = "REPLACE_ME_WITH_A_REAL_ID";
     public static final String JUHE_PHONE_ATTRIBUTION_APP_KEY = "REPLACE_ME_WITH_A_REAL_ID";
     public static final String JUHE_ROBOT_APP_KEY = "REPLACE_ME_WITH_A_REAL_ID";
+    public static final String JUHE_WECHAT_APP_KEY = "REPLACE_ME_WITH_A_REAL_ID";
 }

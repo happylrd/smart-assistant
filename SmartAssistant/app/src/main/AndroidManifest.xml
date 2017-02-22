@@ -54,6 +54,9 @@
         <activity
             android:name=".ui.PhoneAttributionActivity"
             android:label="归属地查询" />
+        <activity
+            android:name=".ui.NewsDetailActivity"
+            android:label="新闻详情" />
     </application>
 
 </manifest>
