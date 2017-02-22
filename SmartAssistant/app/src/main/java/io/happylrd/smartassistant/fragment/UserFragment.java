@@ -91,7 +91,7 @@ public class UserFragment extends Fragment implements View.OnClickListener {
         UtilTools.getImageFromShare(getActivity(), civ_profile);
 
         //TODO:dialog's width and height will be replaced later
-        mPhotoDialog = new CustomDialog(getActivity(), 1400, 1000, R.layout.dialog_photo,
+        mPhotoDialog = new CustomDialog(getActivity(), 0, 0, R.layout.dialog_photo,
                 R.style.Theme_dialog, Gravity.BOTTOM, R.style.pop_anim_style);
         mPhotoDialog.setCancelable(false);
 

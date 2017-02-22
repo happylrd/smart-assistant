@@ -82,10 +82,10 @@ public class WeChatFragment extends Fragment {
 
             for (int i = 0; i < jsonList.length(); i++) {
                 JSONObject jsonObj = jsonList.getJSONObject(i);
-
-                WeChatData data = new WeChatData();
                 String title = jsonObj.getString("title");
                 String url = jsonObj.getString("url");
+
+                WeChatData data = new WeChatData();
                 data.setTitle(title);
                 data.setSource(jsonObj.getString("source"));
                 data.setImgUrl(jsonObj.getString("firstImg"));

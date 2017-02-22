@@ -105,11 +105,11 @@ public class ChatListAdapter extends BaseAdapter {
         return 3;
     }
 
-    class LeftInfoViewHolder {
+    private class LeftInfoViewHolder {
         private TextView mLeftInfoText;
     }
 
-    class RightInfoViewHolder {
+    private class RightInfoViewHolder {
         private TextView mRightInfoText;
     }
 }

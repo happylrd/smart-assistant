@@ -12,7 +12,8 @@
         android:layout_height="wrap_content"
         android:background="@drawable/button_bg"
         android:text="拍照"
-        android:textColor="@android:color/white" />
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
 
     <Button
         android:id="@+id/btn_gallery"
@@ -22,7 +23,8 @@
         android:layout_marginTop="16dp"
         android:background="@drawable/button_bg"
         android:text="图库"
-        android:textColor="@android:color/white" />
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
 
     <Button
         android:id="@+id/btn_cancel"
@@ -30,5 +32,6 @@
         android:layout_height="wrap_content"
         android:background="@drawable/button_bg"
         android:text="取消"
-        android:textColor="@android:color/white" />
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
 </LinearLayout>

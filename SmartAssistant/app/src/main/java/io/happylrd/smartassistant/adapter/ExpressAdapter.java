@@ -70,7 +70,7 @@ public class ExpressAdapter extends BaseAdapter {
         return convertView;
     }
 
-    class ViewHolder {
+    private class ViewHolder {
         private TextView mRemarkText;
         private TextView mZoneText;
         private TextView mDateTimeText;

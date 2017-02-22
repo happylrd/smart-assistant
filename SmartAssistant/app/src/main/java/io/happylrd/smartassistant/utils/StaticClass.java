@@ -17,4 +17,6 @@ public class StaticClass {
     public static final String JUHE_PHONE_ATTRIBUTION_APP_KEY = "REPLACE_ME_WITH_A_REAL_ID";
     public static final String JUHE_ROBOT_APP_KEY = "REPLACE_ME_WITH_A_REAL_ID";
     public static final String JUHE_WECHAT_APP_KEY = "REPLACE_ME_WITH_A_REAL_ID";
+
+    public static final String GANK_GIRL_URL = "http://gank.io/api/search/query/listview/category/福利/count/50/page/1";
 }

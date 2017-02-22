@@ -56,7 +56,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         mForgetPasswordText.setOnClickListener(this);
 
         //TODO:dialog's width and height will be replaced later
-        mLoadingDialog = new CustomDialog(this, 1000, 400, R.layout.dialog_loading,
+        mLoadingDialog = new CustomDialog(this, 0, 0, R.layout.dialog_loading,
                 R.style.Theme_dialog, Gravity.CENTER, R.style.pop_anim_style);
         mLoadingDialog.setCancelable(false);
 

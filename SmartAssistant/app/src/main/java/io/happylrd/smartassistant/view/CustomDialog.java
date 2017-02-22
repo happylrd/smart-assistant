@@ -12,7 +12,7 @@ public class CustomDialog extends Dialog {
 
     // define template
     public CustomDialog(Context context, int layout, int style) {
-        this(context, WindowManager.LayoutParams.WRAP_CONTENT,
+        this(context, WindowManager.LayoutParams.MATCH_PARENT,
                 WindowManager.LayoutParams.WRAP_CONTENT, layout, style, Gravity.CENTER);
     }
 
@@ -25,8 +25,9 @@ public class CustomDialog extends Dialog {
         Window window = getWindow();
         WindowManager.LayoutParams layoutParams = window.getAttributes();
 
-        layoutParams.width = width;
-        layoutParams.height = height;
+        //TODO:need to be modified later
+        layoutParams.width = WindowManager.LayoutParams.MATCH_PARENT;
+        layoutParams.height = WindowManager.LayoutParams.WRAP_CONTENT;
         layoutParams.gravity = gravity;
 
         window.setAttributes(layoutParams);
