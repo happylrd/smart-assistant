@@ -12,6 +12,10 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.iflytek.cloud.SpeechConstant;
+import com.iflytek.cloud.SpeechError;
+import com.iflytek.cloud.SpeechSynthesizer;
+import com.iflytek.cloud.SynthesizerListener;
 import com.kymjs.rxvolley.RxVolley;
 import com.kymjs.rxvolley.client.HttpCallback;
 
@@ -25,6 +29,7 @@ import io.happylrd.smartassistant.R;
 import io.happylrd.smartassistant.adapter.ChatListAdapter;
 import io.happylrd.smartassistant.entity.ChatData;
 import io.happylrd.smartassistant.utils.LogUtil;
+import io.happylrd.smartassistant.utils.ShareUtils;
 import io.happylrd.smartassistant.utils.StaticClass;
 
 public class AssistantFragment extends Fragment implements View.OnClickListener {
@@ -33,6 +38,8 @@ public class AssistantFragment extends Fragment implements View.OnClickListener 
 
     private List<ChatData> mChatDataList = new ArrayList<>();
     private ChatListAdapter mAdapter;
+
+    private SpeechSynthesizer mTts;
 
     private EditText et_info;
     private Button mSendBtn;
@@ -48,6 +55,14 @@ public class AssistantFragment extends Fragment implements View.OnClickListener 
     }
 
     private void initView(View view) {
+        mTts = SpeechSynthesizer.createSynthesizer(getActivity(), null);
+
+        mTts.setParameter(SpeechConstant.VOICE_NAME, "xiaoyan");// 设置发音人
+        mTts.setParameter(SpeechConstant.SPEED, "50");
+        mTts.setParameter(SpeechConstant.VOLUME, "80");
+        mTts.setParameter(SpeechConstant.ENGINE_TYPE, SpeechConstant.TYPE_CLOUD);
+//        mTts.setParameter(SpeechConstant.TTS_AUDIO_PATH, "./sdcard/iflytek.pcm");
+
         mChatListView = (ListView) view.findViewById(R.id.chatListView);
         et_info = (EditText) view.findViewById(R.id.et_info);
         mSendBtn = (Button) view.findViewById(R.id.btn_send);
@@ -104,6 +119,11 @@ public class AssistantFragment extends Fragment implements View.OnClickListener 
     }
 
     private void addLeftItem(String info) {
+        boolean isSpeak = ShareUtils.getBoolean(getActivity(), StaticClass.SHARE_IS_SPEAK, false);
+        if (isSpeak) {
+            startSpeaking(info);
+        }
+
         ChatData data = new ChatData();
         data.setType(ChatListAdapter.LEFT_INFO_TYPE);
         data.setInfo(info);
@@ -122,4 +142,45 @@ public class AssistantFragment extends Fragment implements View.OnClickListener 
         mAdapter.notifyDataSetChanged();
         mChatListView.setSelection(mChatListView.getBottom());
     }
+
+    private void startSpeaking(String text) {
+        mTts.startSpeaking(text, mSynListener);
+    }
+
+    private SynthesizerListener mSynListener = new SynthesizerListener() {
+        @Override
+        public void onSpeakBegin() {
+
+        }
+
+        @Override
+        public void onBufferProgress(int i, int i1, int i2, String s) {
+
+        }
+
+        @Override
+        public void onSpeakPaused() {
+
+        }
+
+        @Override
+        public void onSpeakResumed() {
+
+        }
+
+        @Override
+        public void onSpeakProgress(int i, int i1, int i2) {
+
+        }
+
+        @Override
+        public void onCompleted(SpeechError speechError) {
+
+        }
+
+        @Override
+        public void onEvent(int i, int i1, int i2, Bundle bundle) {
+
+        }
+    };
 }
